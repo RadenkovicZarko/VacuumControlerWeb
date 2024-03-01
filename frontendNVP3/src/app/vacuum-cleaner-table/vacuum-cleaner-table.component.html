@@ -1,0 +1,60 @@
+<div>
+  <table class="vacuum-cleaner-table">
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Status</th>
+      <th>Date</th>
+      <!-- Add more columns as needed -->
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let vacuumCleaner of vacuumCleaners">
+      <td>{{ vacuumCleaner.id }}</td>
+      <td>{{ vacuumCleaner.name }}</td>
+      <td>{{ vacuumCleaner.status }}</td>
+      <td>{{vacuumCleaner.active}}</td>
+      <td>{{ vacuumCleaner.createDate | date}}</td>
+      <td>
+        <button (click)="startVacuumCleaner(vacuumCleaner.id)">Start</button>
+      </td>
+      <td>
+        <button (click)="stopVacuumCleaner(vacuumCleaner.id)">Stop</button>
+      </td>
+      <td>
+        <button (click)="dischargeVacuumCleaner(vacuumCleaner.id)">Discharge</button>
+      </td>
+      <td>
+        <button (click)="removeVacuumCleaner(vacuumCleaner.id)">Remove</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <form (ngSubmit)="scheduleActivity()">
+    <label for="vacuumId">Select Vacuum Cleaner ID:</label>
+    <select id="vacuumId" [(ngModel)]="selectedId" name="vacuumId">
+      <option *ngFor="let id of vacuumCleanerIds" [value]="id">{{ id }}</option>
+    </select>
+
+    <label for="activity">Select Activity:</label>
+    <select id="activity" [(ngModel)]="selectedActivity" name="activity">
+      <option value="START">Start</option>
+      <option value="STOP">Stop</option>
+      <option value="DISCHARGE">Discharge</option>
+    </select>
+
+    <label for="date">Select Date:</label>
+    <input type="date" id="date" [(ngModel)]="selectedDate" name="date">
+
+<!--    <label for="time">Select Time:</label>-->
+<!--    <input type="time" id="time" [(ngModel)]="selectedTime" name="time">-->
+
+    <label for="time">Select Time (HH:MM:SS):</label>
+    <input type="text" id="time" [(ngModel)]="selectedTime" name="time" pattern="([01]?[0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]">
+
+
+    <button type="submit">Schedule Activity</button>
+  </form>
+</div>

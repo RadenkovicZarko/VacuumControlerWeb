@@ -1,0 +1,22 @@
+<table>
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>Action</th>
+    <th>Date</th>
+    <th>Vacuum Cleaner ID</th>
+    <th>Owner</th>
+    <th>Message</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let errorMessage of errorMessages">
+    <td>{{ errorMessage.id }}</td>
+    <td>{{ errorMessage.action }}</td>
+    <td>{{ errorMessage.date | date}}</td>
+    <td>{{ errorMessage.vacuumCleanerId }}</td>
+    <td>{{ errorMessage.owner }}</td>
+    <td>{{ errorMessage.message }}</td>
+  </tr>
+  </tbody>
+</table>

@@ -1,0 +1,34 @@
+<header>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <div class="collapse navbar-collapse justify-content-between" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+<!--          <a [routerLink]="'/'" class="nav-link active" aria-current="page">Login</a>-->
+          <div *ngIf="isLoggedIn()">
+            <a [routerLink]="'/userList'" class="nav-link active" aria-current="page">UserList</a>
+          </div>
+          <div *ngIf="isLoggedIn()">
+            <a [routerLink]="'/searchVacuumeCleaner'" class="nav-link active" aria-current="page">Search</a>
+          </div>
+          <div *ngIf="isLoggedIn()" >
+            <a [routerLink]="'/addVacuumCleaner'" class="nav-link active" aria-current="page">Add</a>
+          </div>
+          <div *ngIf="isLoggedIn()">
+            <a [routerLink]="'/errorMessage'" class="nav-link active" aria-current="page">ErrorList</a>
+          </div>
+          <div *ngIf="isLoggedIn()">
+            <a [routerLink]="'/vacuumCleanerTable'" class="nav-link active" aria-current="page">Table</a>
+          </div>
+<!--          <a [routerLink]="'/textSimilarity'" class="nav-link active" aria-current="page">TextSimilarity</a>-->
+<!--          <a [routerLink]="'/languageDetection'" class="nav-link active" aria-current="page">LanguageDetection</a>-->
+<!--          <a [routerLink]="'/sentimentAnalysis'" class="nav-link active" aria-current="page">SentimentAnalysis</a>-->
+<!--          <a [routerLink]="'/apiHistory'" class="nav-link active" aria-current="page">ApiHistory</a>-->
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<div class="container pt-3">
+  <router-outlet></router-outlet>
+</div>

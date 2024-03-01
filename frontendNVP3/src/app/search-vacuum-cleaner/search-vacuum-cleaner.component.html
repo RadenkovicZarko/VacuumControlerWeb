@@ -1,0 +1,81 @@
+<!--<div>-->
+<!--  <label for="name">Name:</label>-->
+<!--  <input type="text" id="name" [(ngModel)]="searchCriteria.name">-->
+
+<!--  <label for="dateFrom">Date From:</label>-->
+<!--  <input type="date" id="dateFrom" [(ngModel)]="searchCriteria.dateFrom">-->
+
+<!--  <label for="dateTo">Date To:</label>-->
+<!--  <input type="date" id="dateTo" [(ngModel)]="searchCriteria.dateTo">-->
+
+<!--  <label for="status">Status:</label>-->
+<!--  <select id="status" multiple [(ngModel)]="searchCriteria.statusList">-->
+<!--    <option value="ON">ON</option>-->
+<!--    <option value="OFF">OFF</option>-->
+<!--    <option value="DISCHARGING">DISCHARGING</option>-->
+<!--    &lt;!&ndash; Add more status options if needed &ndash;&gt;-->
+<!--  </select>-->
+<!--  <button (click)="searchVacuumCleaners()">Search</button>-->
+<!--</div>-->
+
+<!--<table>-->
+<!--  <thead>-->
+<!--  <tr>-->
+<!--    <th>ID</th>-->
+<!--    <th>Name</th>-->
+<!--    <th>Status</th>-->
+<!--    &lt;!&ndash; Add more columns as needed &ndash;&gt;-->
+<!--  </tr>-->
+<!--  </thead>-->
+<!--  <tbody>-->
+<!--  <tr *ngFor="let vacuumCleaner of vacuumCleaners">-->
+<!--    <td>{{ vacuumCleaner.id }}</td>-->
+<!--    <td>{{ vacuumCleaner.name }}</td>-->
+<!--    <td>{{ vacuumCleaner.status }}</td>-->
+<!--    &lt;!&ndash; Display other vacuum cleaner properties as needed &ndash;&gt;-->
+<!--  </tr>-->
+<!--  </tbody>-->
+<!--</table>-->
+<div class="search-container">
+  <h2>Vacuum Cleaner Search</h2>
+  <div class="search-form">
+    <label for="name">Name:</label>
+    <input type="text" id="name" [(ngModel)]="searchCriteria.name">
+
+    <label for="dateFrom">Date From:</label>
+    <input type="date" id="dateFrom" [(ngModel)]="searchCriteria.dateFrom">
+
+    <label for="dateTo">Date To:</label>
+    <input type="date" id="dateTo" [(ngModel)]="searchCriteria.dateTo">
+
+    <label for="status">Status:</label>
+    <select id="status" multiple [(ngModel)]="searchCriteria.statusList">
+      <option value="ON">ON</option>
+      <option value="OFF">OFF</option>
+      <option value="DISCHARGING">DISCHARGING</option>
+      <!-- Add more status options if needed -->
+    </select>
+
+    <button class="search-button" (click)="searchVacuumCleaners()">Search</button>
+  </div>
+
+  <table class="vacuum-cleaner-table">
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Status</th>
+      <th>Date</th>
+      <!-- Add more columns as needed -->
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let vacuumCleaner of vacuumCleaners">
+      <td>{{ vacuumCleaner.id }}</td>
+      <td>{{ vacuumCleaner.name }}</td>
+      <td>{{ vacuumCleaner.status }}</td>
+      <td>{{ vacuumCleaner.createDate | date}}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>

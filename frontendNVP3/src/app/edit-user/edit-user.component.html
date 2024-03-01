@@ -1,0 +1,60 @@
+<div>
+  <h2>Uređivanje korisnika: {{ id }}</h2>
+  <form (ngSubmit)="saveChanges()">
+    <label>Ime:</label>
+    <input type="text" [(ngModel)]="user.firstName" name="firstName" required>
+
+    <label>Prezime:</label>
+    <input type="text" [(ngModel)]="user.lastName" name="lastName" required>
+
+    <label>Email:</label>
+    <input type="email" [(ngModel)]="user.email" name="email" required disabled>
+
+    <label>Dozvole:</label>
+    <div>
+      <input type="checkbox" id="can_read_users" [(ngModel)]="user.permissions.can_create_users" name="can_create_users">
+      <label for="can_create_users">can_create_users</label>
+    </div>
+    <div>
+      <input type="checkbox" id="can_create_users" [(ngModel)]="user.permissions.can_read_users" name="can_read_users">
+      <label for="can_read_users">can_read_users</label>
+    </div>
+    <div>
+      <input type="checkbox" id="can_update_users" [(ngModel)]="user.permissions.can_update_users" name="can_update_users">
+      <label for="can_update_users">can_update_users</label>
+    </div>
+    <div>
+      <input type="checkbox" id="can_delete_users" [(ngModel)]="user.permissions.can_delete_users" name="can_delete_users">
+      <label for="can_delete_users">can_delete_users</label>
+    </div>
+
+    <div>
+      <input type="checkbox" id="can_search_vacuum" [(ngModel)]="user.permissions.can_search_vacuum" name="can_search_vacuum">
+      <label for="can_search_vacuum">can_search_vacuum</label>
+    </div>
+    <div>
+      <input type="checkbox" id="can_start_vacuum" [(ngModel)]="user.permissions.can_start_vacuum" name="can_start_vacuum">
+      <label for="can_start_vacuum">can_start_vacuum</label>
+    </div>
+    <div>
+      <input type="checkbox" id="can_stop_vacuum" [(ngModel)]="user.permissions.can_stop_vacuum" name="can_stop_vacuum">
+      <label for="can_stop_vacuum">can_stop_vacuum</label>
+    </div>
+    <div>
+      <input type="checkbox" id="can_discharge_vacuum" [(ngModel)]="user.permissions.can_discharge_vacuum" name="can_discharge_vacuum">
+      <label for="can_discharge_vacuum">can_discharge_vacuum</label>
+    </div>
+
+    <div>
+      <input type="checkbox" id="can_add_vacuum" [(ngModel)]="user.permissions.can_add_vacuum" name="can_add_vacuum">
+      <label for="can_add_vacuum">can_add_vacuum</label>
+    </div>
+    <div>
+      <input type="checkbox" id="can_remove_vacuums" [(ngModel)]="user.permissions.can_remove_vacuums" name="can_remove_vacuums">
+      <label for="can_remove_vacuums">can_remove_vacuums</label>
+    </div>
+
+    <button type="submit">Sačuvaj izmene</button>
+
+  </form>
+</div>

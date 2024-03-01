@@ -1,0 +1,51 @@
+/* user-list.component.css */
+
+.user-table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.user-table th, .user-table td {
+  border: 1px solid #dddddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.user-table th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+.user-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.user-table tr:hover {
+  background-color: #f1f1f1;
+}
+
+/* Button-like styles for the anchor tag */
+.button-link {
+  display: inline-block;
+  padding: 8px 16px;
+  text-align: center;
+  text-decoration: none;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.button-link:hover {
+  background-color: #0056b3; /* Change color on hover */
+}
+
+.button-link:focus {
+  outline: none; /* Remove outline on focus */
+}
+
+.button-link:active {
+  background-color: #0056b3; /* Change color when clicked */
+}
+
